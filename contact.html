@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFKCYWRJG3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-ZFKCYWRJG3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Aniessh Medhyal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0d1218;
+    --surface2: #121820;
+    --accent: #c8a96e;
+    --accent2: #e8cfa0;
+    --text: #dde3ea;
+    --muted: #5a6470;
+    --border: rgba(200,169,110,0.15);
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page { position: relative; z-index: 1; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.92);
+    backdrop-filter: blur(16px);
+    z-index: 100;
+  }
+
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-decoration: none; }
+  .nav-tagline { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; text-transform: uppercase; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  .page-header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 3rem 3rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .page-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .page-label::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--accent); }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    letter-spacing: 0.04em;
+    line-height: 0.95;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .page-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  .section-wrap { max-width: 1000px; margin: 0 auto; padding: 3rem; }
+
+  /* CONTACT INTRO */
+  .contact-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-subtle);
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 1px;
+  }
+
+  .contact-intro-left {
+    background: var(--surface);
+    padding: 2.5rem;
+  }
+
+  .contact-intro-left h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .contact-intro-left p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .contact-intro-right {
+    background: var(--surface);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .availability-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+
+  .availability-row:last-child { border-bottom: none; }
+  .avail-key { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .avail-val { font-size: 13px; color: var(--text); }
+  .avail-val.open { color: var(--accent); }
+
+  /* CONTACT LINKS */
+  .contact-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border-subtle);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .contact-link {
+    background: var(--surface);
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .contact-link:hover { background: var(--surface2); }
+  .contact-link:hover .contact-arrow { color: var(--accent); transform: translateX(4px); }
+  .contact-link:hover .contact-link-val { color: var(--accent); }
+
+  .contact-link.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .contact-link-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .contact-link-val {
+    font-size: 13px;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .contact-arrow {
+    font-size: 20px;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+
+  /* LOCATION */
+  .location-bar {
+    margin-top: 1px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .location-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .location-val {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .location-coords {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border-subtle);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 720px) {
+    nav { padding: 1rem 1.5rem; }
+    .page-header { padding: 2rem 1.5rem; }
+    .section-wrap { padding: 2rem 1.5rem; }
+    .contact-intro { grid-template-columns: 1fr; }
+    .contact-links-grid { grid-template-columns: 1fr; }
+    .location-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <div>
+      <a href="index.html" class="nav-logo">ANIESSH MEDHYAL</a>
+      <div class="nav-tagline">Mechanical Engineer · Aerospace</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-label">04 — Contact</div>
+    <div class="page-title">Get In<br>Touch</div>
+    <p class="page-desc">Open to internships, live projects, and collaborations in aerospace and mechanical engineering. Based in Bengaluru — originally from California.</p>
+  </div>
+
+  <div class="section-wrap">
+
+    <div class="contact-intro">
+      <div class="contact-intro-left">
+        <h3>Open to Opportunities</h3>
+        <p>I'm actively looking for internships and engineering projects where I can contribute hands-on. Whether it's aerospace, manufacturing, CAD, or something in between — if it's interesting, I want to hear about it.</p>
+      </div>
+      <div class="contact-intro-right">
+        <div class="availability-row">
+          <span class="avail-key">Status</span>
+          <span class="avail-val open">Open to internships</span>
+        </div>
+        <div class="availability-row">
+          <span class="avail-key">Available</span>
+          <span class="avail-val">From June 2025</span>
+        </div>
+        <div class="availability-row">
+          <span class="avail-key">Preference</span>
+          <span class="avail-val">Aerospace · Manufacturing · CAD</span>
+        </div>
+        <div class="availability-row">
+          <span class="avail-key">Location</span>
+          <span class="avail-val">Bengaluru · Remote OK</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-links-grid">
+      <a class="contact-link" href="mailto:aniessh.medhyal@gmail.com">
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val">aniessh.medhyal@gmail.com</div>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+      <a class="contact-link" href="tel:+919187359679">
+        <div>
+          <div class="contact-link-label">Phone</div>
+          <div class="contact-link-val">+91 91873 59679</div>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+      <a class="contact-link disabled" href="#">
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">Coming soon</div>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+      <a class="contact-link disabled" href="#">
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">Coming soon</div>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="location-bar">
+      <div>
+        <div class="location-label">Current Location</div>
+        <div class="location-val">Bengaluru, Karnataka, India</div>
+      </div>
+      <div class="location-coords">12.9716° N, 77.5946° E</div>
+    </div>
+
+  </div>
+
+  <footer>
+    Aniessh Medhyal &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; © 2025
+  </footer>
+
+</div>
+</body>
+</html>
