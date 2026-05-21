@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFKCYWRJG3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-ZFKCYWRJG3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills — Aniessh Medhyal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #080c10;
+    --surface: #0d1218;
+    --surface2: #121820;
+    --accent: #c8a96e;
+    --accent2: #e8cfa0;
+    --text: #dde3ea;
+    --muted: #5a6470;
+    --border: rgba(200,169,110,0.15);
+    --border-subtle: rgba(255,255,255,0.06);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,169,110,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,169,110,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page { position: relative; z-index: 1; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: 1px solid var(--border-subtle);
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.92);
+    backdrop-filter: blur(16px);
+    z-index: 100;
+  }
+
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--accent); letter-spacing: 0.08em; text-decoration: none; }
+  .nav-tagline { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; text-transform: uppercase; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+  .page-header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 3rem 3rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .page-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .page-label::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--accent); }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    letter-spacing: 0.04em;
+    line-height: 0.95;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .page-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  .section-wrap { max-width: 1000px; margin: 0 auto; padding: 3rem; }
+
+  /* SKILL BLOCK */
+  .skill-block {
+    margin-bottom: 1px;
+    background: var(--border-subtle);
+  }
+
+  .skill-block-inner {
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0;
+    transition: background 0.2s;
+  }
+
+  .skill-block-left {
+    padding: 2rem;
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .skill-block-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-block-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .skill-block-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .skill-block-right {
+    padding: 2rem;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 1fr 160px 40px;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .skill-row:last-child { border-bottom: none; }
+
+  .skill-name {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .skill-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .skill-bar-wrap {
+    height: 2px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .skill-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 1px;
+    opacity: 0.7;
+  }
+
+  .skill-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* TOOLS GRID */
+  .tools-section {
+    margin-top: 3rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--surface);
+  }
+
+  .tools-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tools-header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-subtle);
+  }
+
+  .tool-cell {
+    background: var(--surface);
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .tool-cell:hover { background: var(--surface2); }
+
+  .tool-name {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .tool-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .tool-status {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .tool-status.active { color: var(--accent); }
+  .tool-status.learning { color: #5a8a7a; }
+
+  .status-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .active .status-dot { background: var(--accent); }
+  .learning .status-dot { background: #5a8a7a; }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    border-top: 1px solid var(--border-subtle);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 720px) {
+    nav { padding: 1rem 1.5rem; }
+    .page-header { padding: 2rem 1.5rem; }
+    .section-wrap { padding: 2rem 1.5rem; }
+    .skill-block-inner { grid-template-columns: 1fr; }
+    .skill-block-left { border-right: none; border-bottom: 1px solid var(--border-subtle); }
+    .skill-row { grid-template-columns: 1fr 40px; }
+    .skill-note { display: none; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <div>
+      <a href="index.html" class="nav-logo">ANIESSH MEDHYAL</a>
+      <div class="nav-tagline">Mechanical Engineer · Aerospace</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-label">02 — Skills</div>
+    <div class="page-title">Technical<br>Competencies</div>
+    <p class="page-desc">A breakdown of my hands-on skills, software proficiency, and engineering knowledge — built through competition, training, and coursework.</p>
+  </div>
+
+  <div class="section-wrap">
+
+    <!-- CAD & MANUFACTURING -->
+    <div class="skill-block">
+      <div class="skill-block-inner">
+        <div class="skill-block-left">
+          <div>
+            <div class="skill-block-category">Category 01</div>
+            <div class="skill-block-title">CAD & Manufacturing</div>
+          </div>
+          <div class="skill-block-desc">Used professionally in competition and teaching contexts. Experienced with both design and manufacturing workflows in Fusion 360 and OnShape, including full CAM toolpath generation for CNC.</div>
+        </div>
+        <div class="skill-block-right">
+          <div class="skill-row">
+            <div class="skill-name">Autodesk Fusion 360</div>
+            <div class="skill-note">CAD + CAM · Active</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
+            <div class="skill-pct">80%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">OnShape</div>
+            <div class="skill-note">CAD · Active</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+            <div class="skill-pct">70%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">CNC Operation</div>
+            <div class="skill-note">Machining · Active</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:75%"></div></div>
+            <div class="skill-pct">75%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">KiCad (PCB Design)</div>
+            <div class="skill-note">Electronics · Learning</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:50%"></div></div>
+            <div class="skill-pct">50%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Technical Drawing & GD&T</div>
+            <div class="skill-note">Drafting · Active</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div>
+            <div class="skill-pct">60%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGINEERING -->
+    <div class="skill-block">
+      <div class="skill-block-inner">
+        <div class="skill-block-left">
+          <div>
+            <div class="skill-block-category">Category 02</div>
+            <div class="skill-block-title">Engineering Fundamentals</div>
+          </div>
+          <div class="skill-block-desc">First-year coursework at GAT, supplemented by PLTW Engineering from high school and hands-on project work in robotics and competition engineering.</div>
+        </div>
+        <div class="skill-block-right">
+          <div class="skill-row">
+            <div class="skill-name">Engineering Mechanics</div>
+            <div class="skill-note">Statics & Dynamics</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+            <div class="skill-pct">65%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Thermodynamics</div>
+            <div class="skill-note">In Progress</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:50%"></div></div>
+            <div class="skill-pct">50%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Fluid Mechanics</div>
+            <div class="skill-note">In Progress</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:45%"></div></div>
+            <div class="skill-pct">45%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Material Science</div>
+            <div class="skill-note">In Progress</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:45%"></div></div>
+            <div class="skill-pct">45%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Project Management</div>
+            <div class="skill-note">Competition + Robotics</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
+            <div class="skill-pct">72%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AEROSPACE & AVIATION -->
+    <div class="skill-block">
+      <div class="skill-block-inner">
+        <div class="skill-block-left">
+          <div>
+            <div class="skill-block-category">Category 03</div>
+            <div class="skill-block-title">Aerospace & Aviation</div>
+          </div>
+          <div class="skill-block-desc">Grounded in real flight experience — ~70 hours logged toward a Private Pilot's License — and competition-level aerospace design at the Mars Society Convention.</div>
+        </div>
+        <div class="skill-block-right">
+          <div class="skill-row">
+            <div class="skill-name">Airplane Systems & Design</div>
+            <div class="skill-note">PPL Training</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+            <div class="skill-pct">70%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">VFR Navigation & Meteorology</div>
+            <div class="skill-note">PPL Training</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:68%"></div></div>
+            <div class="skill-pct">68%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Aerodynamics</div>
+            <div class="skill-note">Flight + Coursework</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:60%"></div></div>
+            <div class="skill-pct">60%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Aerospace Systems Design</div>
+            <div class="skill-note">Mars Competition</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div>
+            <div class="skill-pct">55%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Structural Analysis</div>
+            <div class="skill-note">In Progress</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:40%"></div></div>
+            <div class="skill-pct">40%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMUNICATION -->
+    <div class="skill-block">
+      <div class="skill-block-inner">
+        <div class="skill-block-left">
+          <div>
+            <div class="skill-block-category">Category 04</div>
+            <div class="skill-block-title">Communication</div>
+          </div>
+          <div class="skill-block-desc">Presented to international expert panels, taught two-week engineering courses, and led teams under pressure. Communication is a core part of my engineering practice.</div>
+        </div>
+        <div class="skill-block-right">
+          <div class="skill-row">
+            <div class="skill-name">Public Speaking</div>
+            <div class="skill-note">Mars Convention + Teaching</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
+            <div class="skill-pct">78%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Technical Writing & Research</div>
+            <div class="skill-note">Academic + Competition</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+            <div class="skill-pct">70%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Curriculum Design & Teaching</div>
+            <div class="skill-note">CNC/CAM Series</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+            <div class="skill-pct">65%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-name">Team Leadership</div>
+            <div class="skill-note">Robotics Captain + PM</div>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
+            <div class="skill-pct">72%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="tools-section">
+      <div class="tools-header">
+        <div class="tools-header-label">Software & Tools</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.06em;">
+          <span style="color:var(--accent);">●</span> Active &nbsp;&nbsp;
+          <span style="color:#5a8a7a;">●</span> Learning
+        </div>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-cell">
+          <div class="tool-name">Autodesk Fusion 360</div>
+          <div class="tool-type">CAD / CAM</div>
+          <div class="tool-status active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">OnShape</div>
+          <div class="tool-type">CAD</div>
+          <div class="tool-status active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">KiCad</div>
+          <div class="tool-type">PCB Design</div>
+          <div class="tool-status learning"><span class="status-dot"></span>Learning</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">Microsoft 365</div>
+          <div class="tool-type">Productivity</div>
+          <div class="tool-status active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">CNC Machines</div>
+          <div class="tool-type">Manufacturing</div>
+          <div class="tool-status active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">VS Code</div>
+          <div class="tool-type">Code Editor</div>
+          <div class="tool-status active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">GitHub</div>
+          <div class="tool-type">Version Control</div>
+          <div class="tool-status learning"><span class="status-dot"></span>Learning</div>
+        </div>
+        <div class="tool-cell">
+          <div class="tool-name">HTML & CSS</div>
+          <div class="tool-type">Web</div>
+          <div class="tool-status learning"><span class="status-dot"></span>Learning</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Aniessh Medhyal &nbsp;·&nbsp; Bengaluru &nbsp;·&nbsp; © 2025
+  </footer>
+
+</div>
+</body>
+</html>
